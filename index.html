@@ -3,7 +3,32 @@
 <head>
      <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
      <title>Random Adder</title>
-     <script src="script.js" charset="utf-8"></script>
+     <!---<script src="script.js" charset="utf-8"></script> --->
+     <script type="text/javascript" charset="utf-8">
+     function randomizer(optag) {
+         "use strict";
+         var num = Math.ceil(Math.random() * 10);
+         var ops = [];
+
+         for (var i = 0; i < num; i++) {
+             ops[i] =  Math.round(Math.random() * 1000)
+         }
+
+         document.getElementById(optag).innerHTML = ops.join("+")
+     };
+
+     function adder(optag, restag) {
+         "use strict";
+         var ops = document.getElementById(optag).innerHTML.split("+");
+         var res = 0;
+
+         for (var i in ops) {
+             res += parseInt(ops[i]);
+         }
+
+         document.getElementById(restag).innerHTML = " = " + res.toString();
+     };
+     </script>
 </head>
 <body>
     <p>
